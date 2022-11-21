@@ -1,12 +1,14 @@
 {
   "name": "my-app",
   "version": "0.0.0",
+  "type": "commonjs",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "serve": "node api/server.js"
   },
   "private": true,
   "dependencies": {
@@ -18,7 +20,11 @@
     "@angular/platform-browser": "^15.0.0",
     "@angular/platform-browser-dynamic": "^15.0.0",
     "@angular/router": "^15.0.0",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "gulp-imagemin": "^7.1.0",
     "rxjs": "~7.5.0",
+    "socket.io": "^4.5.3",
     "tslib": "^2.3.0",
     "zone.js": "~0.12.0"
   },
@@ -27,6 +33,8 @@
     "@angular/cli": "~15.0.0",
     "@angular/compiler-cli": "^15.0.0",
     "@types/jasmine": "~4.3.0",
+    "babel-preset-es2015": "^6.24.1",
+    "eslint": "^8.28.0",
     "jasmine-core": "~4.5.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.1.0",
