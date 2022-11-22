@@ -49,6 +49,6 @@ function removeUser(userName, id) {
   }
 }
 
-http.listen(3000, () => {
-  console.log("Server is listening on 3000");
+http.listen(process.env.PORT || 3000, () => {
+  console.log(`Server is listening on ${process.env.PORT || 3000}`);
 });
