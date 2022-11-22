@@ -42,7 +42,7 @@
   }
   .message-box {
     background: rgba(255, 255, 255, 0.2);
-    padding: 1em 0;
+    padding: 1em;
     height: auto;
     width: 55%;
     border-radius: 5px;
@@ -56,14 +56,6 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-
-    h1 {
-      font-size: 0.9em;
-      padding: 1em;
-      margin: 0;
-      font-weight: 300;
-      text-align: center;
-    }
   }
   &__user {
     width: 0.5em;
@@ -71,16 +63,12 @@
     border-radius: 100%;
     margin: 1em 0.7em;
   }
-  p {
-    float: left;
-    text-align: left;
-    margin: -0.25em 2em;
-    width: 200px;
-  }
 }
 
 .message {
   background-color: transparent;
+  overflow: hidden;
+  overflow-wrap: break-word;
 }
 
 .name {
