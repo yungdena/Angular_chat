@@ -10,10 +10,7 @@ export class UserNameComponent {
 
   userName = '';
 
-  constructor() { }
-
   setUserName(): void {
     this.userNameEvent.emit(this.userName);
   }
-
 }

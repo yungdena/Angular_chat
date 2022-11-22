@@ -13,8 +13,6 @@ export class ChatComponent {
   userList: string[] = [];
   socket: any;
 
-  constructor() { }
-
   userNameUpdate(name: string): void {
     this.socket = io.io(`https://myangularchat.herokuapp.com/?userName=${name}`);
     this.userName = name;
@@ -27,15 +25,18 @@ export class ChatComponent {
 
     this.socket.on('message-broadcast', (data: {message: string, userName: string}) => {
       if (data) {
-        this.messageList.push({message: data.message, userName: data.userName, mine: false});
+        this.messageList.push({message: data.message.trim(), userName: data.userName, mine: false});
       }
     });
   }
 
   sendMessage(): void {
+    if (!this.message.trim()) {
+      return;
+    };
+
     this.socket.emit('message', this.message);
     this.messageList.push({message: this.message, userName: this.userName, mine: true});
     this.message = '';
   }
-
 }
