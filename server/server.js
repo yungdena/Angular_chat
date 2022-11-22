@@ -40,7 +40,7 @@ function addUser(userName, id) {
   }
 }
 
-function removeUser(userName, id) {
+function removeUser(userName) {
   if (userList.has(userName)) {
     let userIds = userList.get(userName);
     if (userIds.size == 0) {
