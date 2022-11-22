@@ -5,11 +5,15 @@
     <div class="chatbox__user-list">
       <h2>User list</h2>
       <div class="chatbox__user--active" *ngFor="let user of userList" >
-        <p>{{ user }}</p>
+        <p class="name">{{ user }}</p>
       </div>
     </div>
     <div class="messages_list">
-      <div class="chatbox__messages" *ngFor="let msg of messageList" [ngClass]="{mine: msg.mine}">
+      <div
+        class="chatbox__messages"
+        *ngFor="let msg of messageList"
+        [ngClass]="{mine: msg.mine}"
+      >
         <div class="user-message">
           <div class="message-box">
             <p class="name">{{ msg.userName }}</p>
@@ -23,7 +27,8 @@
   <div class="form">
     <textarea
       class="form__input"
-      type="text" [(ngModel)]="message"
+      type="text"
+      [(ngModel)]="message"
       maxlength="150"
       rows="3"
       cols="40"

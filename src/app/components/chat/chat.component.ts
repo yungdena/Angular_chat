@@ -16,7 +16,7 @@ export class ChatComponent {
   constructor() { }
 
   userNameUpdate(name: string): void {
-    this.socket = io.io(`localhost:3000`);
+    this.socket = io.io(`https://myangularchat.herokuapp.com/?userName=${name}`);
     this.userName = name;
 
     this.socket.emit('set-user-name', name);
